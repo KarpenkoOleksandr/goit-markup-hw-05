@@ -96,7 +96,7 @@ body {
   content: "";
   position: absolute;
   left: 0;
-  bottom: 0;
+  bottom: -1px;
   width: 100%;
   height: 4px;
   border-radius: 2px;
@@ -180,7 +180,10 @@ body {
 
   color: var(--accent-color);
   background-color: var(--secondary-cloud-color);
-  transition: border var(--tansition-dur-and-func), box-shadow var(--tansition-dur-and-func), color var(--tansition-dur-and-func), background-color var(--tansition-dur-and-func);
+  transition: border-color var(--tansition-dur-and-func),
+    box-shadow var(--tansition-dur-and-func),
+    color var(--tansition-dur-and-func),
+    background-color var(--tansition-dur-and-func);
 }
 
 .button.secondary:hover,
@@ -418,7 +421,8 @@ body {
   border: 1px solid #8e8f99;
   border-radius: 4px;
   color: #8e8f99;
-  transition: color var(--tansition-dur-and-func); border-color var(--tansition-dur-and-func);
+  transition: color var(--tansition-dur-and-func),
+    border-color var(--tansition-dur-and-func);
 }
 
 .customers-icon {
@@ -565,7 +569,7 @@ body {
 /* ================/PROJECT-LIST */
 
 /* ================MODAL-WINDOW */
-.backdrop{
+.backdrop {
   position: fixed;
   z-index: 100;
   top: 0;
@@ -573,33 +577,35 @@ body {
   width: 100%;
   height: 100%;
   background-color: rgba(46, 47, 66, 0.4);
-  transition: opacity var(--tansition-dur-and-func), visibility var(--tansition-dur-and-func);
+  transition: opacity var(--tansition-dur-and-func),
+    visibility var(--tansition-dur-and-func);
 }
 
-.modal{
+.modal {
   position: absolute;
   width: 408px;
-  height: 584px;
+  min-height: 584px;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) scale(1);
   transition: transform var(--tansition-dur-and-func);
   background-color: #fcfcfc;
-  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 2px 1px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
 }
 
-.backdrop.is-hidden .modal{
+.backdrop.is-hidden .modal {
   transform: translate(-50%, -50%) scale(1.2);
 }
 
-.backdrop.is-hidden{
+.backdrop.is-hidden {
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
 }
 
-.modal-close-button{
+.modal-close-button {
   position: absolute;
   top: 24px;
   right: 24px;
@@ -609,26 +615,27 @@ body {
   width: 24px;
   height: 24px;
   border-radius: 50%;
-  background: #E7E9FC;
-border: 1px solid rgba(0, 0, 0, 0.1);
-padding: 0;
-cursor: pointer;
-transition: background-color var(--tansition-dur-and-func), border-color var(--tansition-dur-and-func);
+  background: #e7e9fc;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 0;
+  cursor: pointer;
+  transition: background-color var(--tansition-dur-and-func),
+    border var(--tansition-dur-and-func);
 }
 
-.modal-close-btn-icon{
+.modal-close-btn-icon {
   fill: var(--secondary-dark-color);
   transition: fill var(--tansition-dur-and-func);
 }
 
 .modal-close-button:hover,
-.modal-close-button:focus{
+.modal-close-button:focus {
   background-color: var(--action-color);
-  border-color: var(--action-color);
+  border: none;
 }
 
 .modal-close-button:hover .modal-close-btn-icon,
-.modal-close-button:focus .modal-close-btn-icon{
+.modal-close-button:focus .modal-close-btn-icon {
   fill: var(--primary-white-color);
 }
 /* ================/MODAL-WINDOW */
